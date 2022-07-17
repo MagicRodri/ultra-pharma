@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if not request.user.is_authenticated %}
+    <form method='POST'>
+        {% csrf_token %}
+        <!-- <label for="">Firstname:</label>
+        {{form.first_name}}
+        <label for="">Lastname:</label>
+        {{form.last_name}}
+        <label for="">Email:</label>
+        {{form.email}}
+        <label for="">Username:</label>
+        {{form.username}}
+        <label for="">Password:</label>
+        {{form.password1}}
+        <label for="">Confirm password:</label>
+        {{form.password2}} -->
+        {{form.as_p}}
+        <button type="submit" >Register</button>
+        <p>Already have an account? <a href="/login/">Login</a>.</p>
+    </form>
+    {% else %}
+        <p>You're logged in. Would you like to <a href='/logout/'>logout</a>?</p>
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class='table'>
+        <thead>
+            <tr>
+                {% for field_name in fields_names %}
+                    {% if field_name != 'img' %}
+                        <td>{{field_name}}</td>
+                    {% endif %}
+                    
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in objects %}
+                
+                    <tr>
+                        <td><a href="/products/{{obj.id}}">{{obj.id}}</a></td>
+                        <td>{{obj.name}}</td>
+                        <td>{{obj.description}}</td>
+                        <td>{{obj.quantity}}</td>
+                        <td>{{obj.price}}</td>
+                    </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

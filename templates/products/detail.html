@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        {% if obj %}
+            <h1>{{obj.name}}</h1>
+            {% if obj.img %}
+            <a href="{{ obj.img.url }}"><img src="{{ obj.img.url }}" alt="drone" class='img-fluid img-thumbnail'></a>
+            {% endif %}
+            
+            <p>{{obj.description}}</p>
+        {% else %}
+            <p>Product not found</p>
+        {% endif %}
+        
+    </div>
+{% endblock content %}
