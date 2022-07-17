@@ -1,5 +1,7 @@
+# python virtual env on windows
 Lib/
 Scripts/
+# python virtual en on mac or linux
 bin/
 
 # Byte-compiled / optimized / DLL files
