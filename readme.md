@@ -3,12 +3,12 @@ A web application for pharmacy management
 
 ## Product
 Class representing products in sell. Has a :  
-    -name
-    -description
-    -img
-    -price
-    -quantity
-    -... (to be completed)  
+    -name  
+    -description  
+    -img  
+    -price  
+    -quantity  
+    -... (to be completed)   
 
 ## Accounts management
     -Only online users (admin-owner and employees) can get access to the store (user_required)  
