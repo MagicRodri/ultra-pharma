@@ -5,10 +5,11 @@ A web application for pharmacy management
 Class representing products in sell. Has a :  
     -name  
     -description  
-    -img  
+    -img    
     -price  
-    -quantity  
-    -... (to be completed)   
+    -quanity  
+    -... (to be completed)  
+   
 
 ## Accounts management
     -Only online users (admin-owner and employees) can get access to the store (user_required)  
