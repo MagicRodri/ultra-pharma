@@ -57,7 +57,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ultrapharma.urls'
 
-LOGIN_URL='/login/'
+# No need anymore since the default redirect login url corresponds to my login-view url
+# LOGIN_URL='/login/'
 
 TEMPLATES = [
     {
