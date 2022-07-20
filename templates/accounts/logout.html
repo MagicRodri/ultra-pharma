@@ -9,7 +9,7 @@
         </form>
 
     {% else %}
-        <p>You're not logged in.<a href='/login/'> Login</a>? or <a href='/register/'> Register</a>?</p>
+        <p>You're not logged in.<a href={% url 'login-view' %}> Login</a>? or <a href={% url 'register-view' %}> Register</a>?</p>
     {% endif %}
     
 {% endblock content %}

@@ -14,6 +14,6 @@
     
     {% else %}
         <p>Your product has been successfully created!</p>
-        <a href="/products/{{obj.id}}">{{obj.id}}-{{obj.name}}</a>
+        <a href={% url 'product-detail-view' obj.id %}>{{obj.id}}-{{obj.name}}</a>
     {% endif %}
 {% endblock content %}

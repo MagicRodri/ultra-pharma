@@ -3,7 +3,7 @@
 {% block content %}
     <div>
         {% if obj %}
-            <a href="/products/{{obj.id}}">{{obj.name}}-id={{obj.id}}</a>
+            <a href={% url 'product-search-view' %}>{{obj.name}}-id={{obj.id}}</a>
         {% else %}
             <p class="text-warning" >Submited id does not match any product, please try again.</p>
         {% endif %}

@@ -23,7 +23,7 @@ class Product(models.Model):
 
 def product_pre_save(sender,instance,*args,**kargs):
     # This is run before the save method
-    print("pre_save")
+    # print("pre_save")
     if instance.slug is None :
         slugify_instance_name(instance,save=False)
 
@@ -31,7 +31,7 @@ pre_save.connect(product_pre_save,sender=Product)
 
 def product_post_save(sender,instance,created,*args,**kargs):
     # This is run after the save method
-    print('post_save')
+    # print('post_save')
     if created :
         slugify_instance_name(instance, save=True)
 
