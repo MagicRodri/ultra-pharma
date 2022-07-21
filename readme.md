@@ -3,6 +3,7 @@ A web application for pharmacy management
 
 ## Product
 Class representing products in sell. Has a :  
+  
     -name  
     -description  
     -img    
@@ -21,4 +22,8 @@ Class representing products in sell. Has a :
 
 ## Sells management
 
-## Dashboad
+## Dashboad  
+
+## Commands management  
+	-Admin can make products command  
+	-...  
