@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% if not created %}
-        
+    {% if user.is_superuser %}
+        {% if not created %}
+            
         <form action=" " method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{form.as_p}}
@@ -10,10 +11,14 @@
             <button type="submit">Create</button>
         </form>
         
-    
-    
+
+
+        {% else %}
+            <p>Your product has been successfully created!</p>
+            <a href={% url 'product-detail-view' obj.slug %}>{{obj.id}}-{{obj.name}}</a>
+        {% endif %}
     {% else %}
-        <p>Your product has been successfully created!</p>
-        <a href={% url 'product-detail-view' obj.id %}>{{obj.id}}-{{obj.name}}</a>
+        <p>Seems like you don't have access to this page.Would you like to <a href={% url 'logout-view' %}>logout</a>?</p>
     {% endif %}
+    
 {% endblock content %}

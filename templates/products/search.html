@@ -2,12 +2,15 @@
 
 {% block content %}
     <div>
-        {% if obj %}
-            <a href={% url 'product-search-view' %}>{{obj.name}}-id={{obj.id}}</a>
+        {% if products %}
+
+            {% for obj in products %}
+                <a href={% url 'product-detail-view' obj.slug %}>{{obj.name}}-id={{obj.id}}</a> </br>
+            {% endfor %}
+            
         {% else %}
-            <p class="text-warning" >Submited id does not match any product, please try again.</p>
+            <p class="text-warning" >Submited text does not match any product, please try again.</p>
         {% endif %}
-        
         
     </div>
 {% endblock content %}

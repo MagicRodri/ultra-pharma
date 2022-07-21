@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from product.models import Product
-from product.forms import ProductForm
-from django.forms.models import model_to_dict
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def home_view(request):
     fields_names=[f.name for f in Product._meta.get_fields()]
     product_qr=Product.objects.all()

@@ -1,4 +1,5 @@
 
+from dataclasses import fields
 from django import forms
 
 from .models import Product
@@ -6,7 +7,7 @@ from .models import Product
 class ProductForm(forms.ModelForm):
     class Meta:
         model=Product
-        fields='__all__'
+        fields = '__all__'
 
     
     # def clean(self):

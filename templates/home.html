@@ -16,7 +16,7 @@
             {% for obj in objects %}
                 
                     <tr>
-                        <td><a href={% url 'product-detail-view' obj.id %}>{{obj.id}}</a></td>
+                        <td><a href={% url 'product-detail-view' obj.slug %}>{{obj.id}}</a></td>
                         <td>{{obj.name}}</td>
                         <td>{{obj.description}}</td>
                         <td>{{obj.quantity}}</td>
