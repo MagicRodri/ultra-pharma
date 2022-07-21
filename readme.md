@@ -13,9 +13,9 @@ Class representing products in sell. Has a :
    
 
 ## Accounts management
-    -Only online users (admin-owner and employees) can get access to the store (user_required)  
-    -Only admin(store owner) can create employees  
-    -Only admin can add products  
+    -[x] Only online users (admin-owner and employees) can get access to the store (user_required)  
+    -[x] Only admin(store owner) can create employees (user.is_superuser)  
+    -[x] Only admin can add products  
     -Both admin and employees can sell products  
     -Both admin and employees can create client profile for special offers and customers tracking  
     -... (to be completed)  
