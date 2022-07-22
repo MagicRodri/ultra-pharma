@@ -2,7 +2,17 @@
 from django.db import models
 from django.db.models.signals import pre_save,post_save
 from .utils import slugify_instance_name
+from django.db.models import Q
 # Create your models here.
+
+class ProductManager(models.Manager):
+    
+    def search(self,query=None):
+        if query is None or query == "":
+            return self.get_queryset().none() # []
+        else:
+            lookups = Q(name__icontains=query) | Q(description__icontains=query)
+            return self.get_queryset().filter(lookups)
 
 class Product(models.Model):
     name = models.CharField(max_length=64)
@@ -11,6 +21,8 @@ class Product(models.Model):
     img = models.ImageField(upload_to='product',blank=True,default=None)
     quantity = models.IntegerField(default=1)
     price = models.FloatField()
+
+    objects = ProductManager()
 
     def save(self,*args,**kargs):
 

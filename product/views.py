@@ -22,15 +22,13 @@ def product_detail_view(request,slug=None):
 
 @login_required
 def product_search_view(request):
-    context={}
+    
     query=request.GET.get('q')
-    if query is not None:
-        lookups= Q(name__icontains=query) | Q(description__icontains=query)
-        products=Product.objects.filter(lookups)
-        context['products'] = products
-        # print(query)
-    else:
-        context['search_err_msg']="No matching results for your research, please try again!"
+    products=Product.objects.search(query)
+    context={
+        'products' : products,
+
+    }
 
     return render(request,'products/search.html',context=context)
 
