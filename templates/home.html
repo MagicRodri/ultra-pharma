@@ -5,7 +5,7 @@
         <thead>
             <tr>
                 {% for field_name in fields_names %}
-                    {% if field_name != 'img' %}
+                    {% if field_name not in not_show %}
                         <td>{{field_name}}</td>
                     {% endif %}
                     

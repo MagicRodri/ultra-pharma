@@ -10,7 +10,11 @@ def sale_view(request):
     }
     if request.method == 'POST':
         form = SaleForm(request.POST)
-        if form.is_valid:
+        context['form'] = form # for gathering the uncleaned post data
+        if form.is_valid():
             sale = form.save()
+            sale_product = sale.product
+            sale_product.quantity = sale_product.quantity - sale.quantity
+            sale_product.save()
             context['success'] = True
     return render(request,'sales/sale.html',context=context)

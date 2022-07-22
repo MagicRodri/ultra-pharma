@@ -19,10 +19,15 @@ class Product(models.Model):
     slug = models.SlugField(unique=True,max_length=64,null=True,blank=True)
     description = models.TextField(blank=True)
     img = models.ImageField(upload_to='product',blank=True,default=None)
-    quantity = models.IntegerField(default=1)
+    quantity = models.IntegerField(default=0)
     price = models.FloatField()
 
     objects = ProductManager()
+
+    # def set_quantity(self,quantity):
+    #     if quantity >= 0:
+    #         self.quantity = quantity
+    #     self.save()
 
     def save(self,*args,**kargs):
 

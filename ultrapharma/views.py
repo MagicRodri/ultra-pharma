@@ -9,6 +9,7 @@ def home_view(request):
     product_qr=Product.objects.all()
     context={
         'objects':product_qr,
-        'fields_names':fields_names
+        'fields_names':fields_names,
+        'not_show' : ['img','slug','sale'] 
     }
     return render(request,'home.html',context=context)
