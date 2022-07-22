@@ -21,6 +21,8 @@ class Product(models.Model):
     img = models.ImageField(upload_to='product',blank=True,default=None)
     quantity = models.IntegerField(default=0)
     price = models.FloatField()
+    timestamp = models.DateField(auto_now_add=True)
+    updated = models.DateField(auto_now=True)
 
     objects = ProductManager()
 
