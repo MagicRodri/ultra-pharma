@@ -21,7 +21,13 @@ Class representing products in sell. Has a :
     -... (to be completed)  
 
 ## Sells management
+The same product can be sold seperatly  
+A sale can be made with different products  
 
+    -product  
+    -quantity  
+    -amount  
+    -
 ## Dashboad  
 
 ## Commands management  

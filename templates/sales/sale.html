@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if not success %}
+        <form action=" " method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Sell</button>
+        </form>
+    {% else %}
+        <p class="success">Sale processed successfully</p>
+    {% endif %}
+    
+{% endblock content %}

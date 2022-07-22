@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 from .views import home_view
 import product.urls
 import accounts.urls
-
+import sales.urls
 
 
 urlpatterns = [
@@ -30,7 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include(accounts.urls)),
     path('products/',include(product.urls)),
-  
+    path('sale/',include(sales.urls))
 ]  
 
 if DEBUG :
