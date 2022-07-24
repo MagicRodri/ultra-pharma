@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        {% if user.profile_photo %}
+        <a href="{{user.profile_photo.url}}"><img src="{{user.profile_photo.url}}" alt=""></a>
+        {% endif %}
+        <p>{{user.username}}</p>
+        <p>{{user.role}}</p>
+
+        <a href={% url 'edit-profile-view' %}>Edit profile</a>
+    {% else %}
+        <div class="warning">Please <a href={% url 'login-view' %}>login</a>to view your profile.</div>
+    {% endif %}
+    
+{% endblock content %}

@@ -1,26 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% if user.is_superuser %}
-    <form method='POST' action = {% url 'register-view' %}>
+    {% if not created %}
+    <form method='POST' action = {% url 'register-view' %} enctype="multipart/form-data">
         {% csrf_token %}
         {% comment %} <label for="">Firstname:</label>
         {{form.first_name}}
         <label for="">Lastname:</label>
         {{form.last_name}}
         <label for="">Email:</label>
-        {{form.email}} {% endcomment %}
+        {{form.email}}
         {{form.username.label}}
         {{form.username}}
         {{form.password1.label}}
         {{form.password1}}
         {{form.password2.label}}
-        {{form.password2}}
+        {{form.password2}} {% endcomment %}
+
+        {{form.as_p}}
 
         <button type="submit" >Register</button>
         <p>Already have an account? <a href={% url 'login-view' %}>Login</a>.</p>
     </form>
     {% else %}
-        <p>Seems like you don't have access to this page.Would you like to <a href={% url 'logout-view' %}>logout</a>?</p>
+        <div class="success">User created successfully</div>
     {% endif %}
 {% endblock content %}
