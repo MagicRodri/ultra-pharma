@@ -1,4 +1,5 @@
 
+from multiprocessing import context
 from django.urls import reverse
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
@@ -62,3 +63,15 @@ def edit_profile_view(request):
             return redirect(reverse('profile-view'))
     context = {'form' : form}
     return render(request,'accounts/edit_profile.html',context=context)
+
+@login_required
+def delete_profile_view(request):
+    if request.user :
+        user = request.user
+        logout(request)
+        user.delete()
+        return redirect(reverse('home-view'))
+    context = {
+
+    }
+    return render(request,'accounts/delete_profile.html',context=context)

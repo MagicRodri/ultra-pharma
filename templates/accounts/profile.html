@@ -9,6 +9,7 @@
         <p>{{user.role}}</p>
 
         <a href={% url 'edit-profile-view' %}>Edit profile</a>
+        <a href={% url 'delete-profile-view' %}>Delete profile</a>
     {% else %}
         <div class="warning">Please <a href={% url 'login-view' %}>login</a>to view your profile.</div>
     {% endif %}

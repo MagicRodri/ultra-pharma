@@ -4,21 +4,7 @@
     {% if not created %}
     <form method='POST' action = {% url 'register-view' %} enctype="multipart/form-data">
         {% csrf_token %}
-        {% comment %} <label for="">Firstname:</label>
-        {{form.first_name}}
-        <label for="">Lastname:</label>
-        {{form.last_name}}
-        <label for="">Email:</label>
-        {{form.email}}
-        {{form.username.label}}
-        {{form.username}}
-        {{form.password1.label}}
-        {{form.password1}}
-        {{form.password2.label}}
-        {{form.password2}} {% endcomment %}
-
         {{form.as_p}}
-
         <button type="submit" >Register</button>
         <p>Already have an account? <a href={% url 'login-view' %}>Login</a>.</p>
     </form>

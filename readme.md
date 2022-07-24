@@ -1,5 +1,5 @@
 # Ultra-pharma
-A web application for pharmacy management
+A web application for store(pharmacy) management
 
 ## Product
 Class representing products in sell. Has a :  
@@ -8,7 +8,7 @@ Class representing products in sell. Has a :
     -description  
     -img    
     -price  
-    -quanity  
+    -quantity  
     -... (to be completed)  
    
 
